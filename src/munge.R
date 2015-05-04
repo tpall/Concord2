@@ -35,5 +35,5 @@ concord <- list.files(path = "data/", pattern = ".csv", full.names = TRUE) %>%
   sapply(read.csv,header = FALSE) %>%
   lapply(munge) %>%
   ldply %>%
-  mutate(Region=gsub("data/([A-z-]+).csv","\\1",.id),
+  mutate(Region=gsub("data//([A-z-]+).csv","\\1",.id),
          Period=sub("([0-9-]+) ","\\1",Period))
