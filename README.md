@@ -9,3 +9,5 @@ Table header was not exported and reconstructed later separately.
 Tabula part can be scripted if you manage to install [tabula-extractor](https://github.com/tabulapdf/tabula-extractor)
 
 In text editor (I used RStudio) clean extracted tables from symbols. Replace centered dot symbols with dots and replace double dots (..) with NA. Replace dash symbols with hyphens.
+
+![survival][https://github.com/tpall/Concord2/blob/master/graphs/concord-2.png]
