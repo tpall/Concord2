@@ -16,5 +16,5 @@ concord %>%
                       list(paste(25.7,M)~patients,67~countries~group("(", CONCORD-2,")"))))) +
   theme(axis.text.x = element_text(angle=45,hjust=1))
 
-# ggsave("concord-2.pdf")
-# ggsave("concord-2.png")
+ggsave("graphs/concord-2.pdf")
+ggsave("graphs/concord-2.png")
