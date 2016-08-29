@@ -27,7 +27,7 @@ munge <- function(x) {
     data.frame(Country=.,newx) %>% 
     .[!apply(., 1, function(x) x[1]==x[2]),] %>% {
       values <- "["(.,,3:ncol(.)) %>% 
-        apply(.,2, .%>%as.character%>%as.numeric)
+        apply(.,2, .%>% as.character %>% as.numeric)
       "["(.,,1:2) %>% cbind(values)}
 }
 
@@ -35,5 +35,6 @@ concord <- list.files(path = "data/", pattern = ".csv", full.names = TRUE) %>%
   sapply(read.csv,header = FALSE) %>%
   lapply(munge) %>%
   ldply %>%
-  mutate(Region=gsub("data//([A-z-]+).csv","\\1",.id),
-         Period=sub("([0-9-]+) ","\\1",Period))
+  mutate(Region = sub("data//([A-z-]+).csv", "\\1", .id),
+         Period = sub("([0-9-]+) ","\\1", Period))
+write.table(concord, "output/concord2.csv", sep = ",", row.names = FALSE)
